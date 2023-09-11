@@ -1,4 +1,4 @@
-#include "lnch_opts.hpp"
+#include "lnch_opts/lnch_opts.hpp"
 #include <iostream>
 #include <optional>
 
@@ -8,7 +8,7 @@ int main() {
   using namespace std;
   using namespace lnch_opts;
   build_hello();
-  char inp{};
+  int inp{};
   cin >> inp;
   choice_lab(inp);
   cout << "#####################################" << endl;

@@ -1,4 +1,4 @@
-#include "lnch_opts.hpp"
+#include "lnch_opts/lnch_opts.hpp"
 #include "first_lab/first.hpp"
 #include "second_lab/second.hpp"
 
@@ -30,12 +30,14 @@ void lnch_opts::build_hello() {
   cout << "#####################################" << endl;
 }
 
-void lnch_opts::choice_lab(char inp) {
+void lnch_opts::choice_lab(int inp) {
   switch (inp) {
   case 1:
     break;
-  case 2:
+  case 2: {
+    second_start();
     break;
+  }
   case 3:
     break;
   case 4:

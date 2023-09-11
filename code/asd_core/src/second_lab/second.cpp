@@ -1,4 +1,7 @@
 #include "second_lab/second.hpp"
+#include "second_lab/tests.hpp"
+#include <iostream>
+#include <ostream>
 #include <stdexcept>
 
 double multiplicationAndDivision(std::string &expression) {
@@ -19,6 +22,8 @@ double multiplicationAndDivision(std::string &expression) {
       break;
 
     case '/':
+      if (expression[1] == '0')
+        throw std::runtime_error("Деление на ноль");
       expression.erase(0, 1);
       result /= prefixAndBracket(expression);
       break;
@@ -31,6 +36,7 @@ double multiplicationAndDivision(std::string &expression) {
 
 double additionAndSubtraction(std::string &expression) {
   double result = multiplicationAndDivision(expression);
+
   while (true) {
     while (isspace(expression[0]))
       expression.erase(0, 1);
@@ -53,6 +59,11 @@ double additionAndSubtraction(std::string &expression) {
 }
 
 bool checkSign(std::string &expression) {
+  if (expression[0] == '=') {
+    expression.clear();
+    return 0;
+  }
+
   if (expression[0] == '+')
     return false;
 
@@ -80,8 +91,6 @@ bool checkSign(std::string &expression) {
 double prefixAndBracket(std::string &expression) {
   while (isspace(expression[0]))
     expression.erase(0, 1);
-
-  double a = strtod(expression.c_str(), NULL);
   switch (expression[0]) {
   case '0':
   case '1':
@@ -92,19 +101,21 @@ double prefixAndBracket(std::string &expression) {
   case '6':
   case '7':
   case '8':
-  case '9':
+  case '9': {
+    double a = strtod(expression.c_str(), NULL);
     expression.erase(0, 1);
     while (checkSign(expression))
       expression.erase(0, 1);
     return a;
-  case '-':
+  }
+  case '-': {
     expression.erase(0, 1);
     return -prefixAndBracket(expression);
-
-  case '+':
+  }
+  case '+': {
     expression.erase(0, 1);
     return prefixAndBracket(expression);
-
+  }
   case '(': {
     expression.erase(0, 1);
     double result = additionAndSubtraction(expression);
@@ -113,7 +124,7 @@ double prefixAndBracket(std::string &expression) {
     return result;
   }
   default:
-    throw std::runtime_error("Bad expression");
+    throw std::runtime_error("Плохое выражение");
   }
 }
 
@@ -124,4 +135,12 @@ double expression(std::string &expression) {
     expression.erase(0, 1);
 
   return result;
+}
+
+void second_start() {
+  // tests();
+  std::string inp{};
+  std::cin >> inp;
+  auto ex = expression(inp);
+  std::cout << ex << std::endl;
 }
