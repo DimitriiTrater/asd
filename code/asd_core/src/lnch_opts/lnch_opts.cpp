@@ -33,11 +33,11 @@ void lnch_opts::build_hello() {
 void lnch_opts::choice_lab(int inp) {
   switch (inp) {
   case 1:
+    first_start();
     break;
-  case 2: {
+  case 2:
     second_start();
     break;
-  }
   case 3:
     break;
   case 4:

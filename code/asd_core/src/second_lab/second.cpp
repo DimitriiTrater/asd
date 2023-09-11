@@ -138,9 +138,9 @@ double expression(std::string &expression) {
 }
 
 void second_start() {
-  // tests();
-  std::string inp{};
-  std::cin >> inp;
-  auto ex = expression(inp);
-  std::cout << ex << std::endl;
+  tests();
+  // std::string inp{};
+  // std::cin >> inp;
+  // auto ex = expression(inp);
+  // std::cout << ex << std::endl;
 }
