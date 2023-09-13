@@ -1,5 +1,6 @@
 #include "lnch_opts/lnch_opts.hpp"
 #include "first_lab/first.hpp"
+#include "fourth_lab/fourth_lab.hpp"
 #include "second_lab/second.hpp"
 #include "third_lab/third_lab.hpp"
 
@@ -16,12 +17,12 @@ void lnch_opts::build_hello() {
   cout << " 4.\"Сортировка методом прочесывания\" " << endl;
   cout << " 5.\"Сортировка вставками\" " << endl;
   cout << " 6.\"Сортировка посредством выбора\" " << endl;
-  cout << " 7.\"Сортировка \" " << endl;
-  cout << " 8.\"Сортировка \" " << endl;
-  cout << " 9.\"Сортировка \" " << endl;
-  cout << "10.\"Сортировка \" " << endl;
-  cout << "11.\"Сортировка \" " << endl;
-  cout << "12.\"Сортировка \" " << endl;
+  cout << " 7.\"Сортировка Шелла\" " << endl;
+  cout << " 8.\"Сортировка Поразрядная\" " << endl;
+  cout << " 9.\"Сортировка Пирамидальная\" " << endl;
+  cout << "10.\"Сортировка Слиянием\" " << endl;
+  cout << "11.\"Сортировка Быстрая\" " << endl;
+  cout << "12.\"Сортировка Внешняя многофазовая\" " << endl;
   cout << "13.\"Задача о скобках\" " << endl;
   cout << "14.\"Задача о скобках\" " << endl;
   cout << "15.\"Задача о скобках\" " << endl;
@@ -43,6 +44,7 @@ void lnch_opts::choice_lab(int inp) {
     third_start();
     break;
   case 4:
+    fourth_start();
     break;
   case 5:
     break;
