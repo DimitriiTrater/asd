@@ -31,9 +31,6 @@ void simple(long long int x) {
     uint64 cpx = x;
     uint64 k{*it}, l{*(it + 1)}, m{*(it + 2)};
     ex = std::pow(3, k) * std::pow(5, l) * std::pow(7, m);
-    if (ex == 0) {
-      std::cout << " " << k << " " << l << " " << m << "" << std::endl;
-    }
     res.push_back(ex);
   }
   std::sort(res.begin(), res.end());
@@ -46,10 +43,10 @@ void simple(long long int x) {
 
 void third_start() {
   long long int inp{};
-  std::cout << "Введите число x: ";
-  std::cin >> inp;
-  if (inp < 0)
-    inp *= (-1);
+  do {
+    std::cout << "Введите число x: ";
+    std::cin >> inp;
+  } while (inp < 0);
   std::cout << "Число x: " << inp << std::endl;
   simple(inp);
 }
