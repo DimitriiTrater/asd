@@ -3,6 +3,7 @@
 #include "first_lab/first.hpp"
 #include "fourth_lab/fourth_lab.hpp"
 #include "second_lab/second.hpp"
+#include "seventh_lab/seventh_lab.hpp"
 #include "sixth_lab/sixth_lab.hpp"
 #include "third_lab/third_lab.hpp"
 
@@ -49,14 +50,13 @@ void lnch_opts::choice_lab(int inp) {
     fourth_start();
     break;
   case 5:
-    std::cout << "message" << std::endl;
     fifth_start();
     break;
   case 6:
-    std::cout << "message" << std::endl;
     sixth_start();
     break;
   case 7:
+    seventh_start();
     break;
   case 8:
     break;
