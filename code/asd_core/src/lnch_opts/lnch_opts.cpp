@@ -1,4 +1,5 @@
 #include "lnch_opts/lnch_opts.hpp"
+#include "eighth_lab/eighth_lab.hpp"
 #include "fifth_lab/fifth_lab.hpp"
 #include "first_lab/first.hpp"
 #include "fourth_lab/fourth_lab.hpp"
@@ -59,6 +60,7 @@ void lnch_opts::choice_lab(int inp) {
     seventh_start();
     break;
   case 8:
+    eighth_start();
     break;
   case 9:
     break;
