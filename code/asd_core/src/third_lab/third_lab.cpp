@@ -7,37 +7,27 @@
 #include <sys/types.h>
 #include <vector>
 
-template <class Conteiner> void gen(Conteiner &cont, int f) {
-  for (uint64 i = 0; std::pow(3, i) < f; i++) {
-    for (uint64 j = 0; std::pow(5, j) < f; j++) {
-      for (uint64 k = 0; std::pow(7, k) < f; k++) {
-        cont.push_back(i);
-        cont.push_back(j);
-        cont.push_back(k);
-      }
-    }
-  }
-}
-
 void simple(long long int x) {
-  // pow(3, k)
-  // pow(5, l)
-  // pow(7, m)
-  std::vector<uint64> vec{};
-  gen(vec, x);
-  std::vector<uint64> res{};
-  for (auto it = vec.begin(); it != vec.end(); it += 3) {
-    uint64 ex{0};
-    uint64 cpx = x;
-    uint64 k{*it}, l{*(it + 1)}, m{*(it + 2)};
-    ex = std::pow(3, k) * std::pow(5, l) * std::pow(7, m);
-    res.push_back(ex);
-  }
-  std::sort(res.begin(), res.end());
-  for (auto &&el : res) {
-    if (x < el)
-      break;
-    std::cout << el << std::endl;
+  for (int i = 3; i < x + 1; i++) {
+    auto temp = i;
+    int k{0}, l{0}, m{0};
+    while (temp % 3 == 0) {
+      k++;
+      temp /= 3;
+    }
+
+    while (temp % 5 == 0) {
+      l++;
+      temp /= 5;
+    }
+
+    while (temp % 7 == 0) {
+      m++;
+      temp /= 7;
+    }
+    if (temp == 1)
+      std::cout << i << " =  3^" << k << " *  5^" << l << " * 7^" << m
+                << std::endl;
   }
 }
 
