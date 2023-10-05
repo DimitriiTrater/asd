@@ -7,6 +7,7 @@
 #include "second_lab/second.hpp"
 #include "seventh_lab/seventh_lab.hpp"
 #include "sixth_lab/sixth_lab.hpp"
+#include "tenth_lab/tenth_lab.hpp"
 #include "third_lab/third_lab.hpp"
 
 void lnch_opts::build_hello() {
@@ -67,6 +68,7 @@ void lnch_opts::choice_lab(int inp) {
     nineth_start();
     break;
   case 10:
+    tenth_start();
     break;
   case 11:
     break;

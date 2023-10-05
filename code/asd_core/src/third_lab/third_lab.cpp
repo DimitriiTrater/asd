@@ -25,6 +25,7 @@ void simple(long long int x) {
       m++;
       temp /= 7;
     }
+
     if (temp == 1)
       std::cout << i << " =  3^" << k << " *  5^" << l << " * 7^" << m
                 << std::endl;
