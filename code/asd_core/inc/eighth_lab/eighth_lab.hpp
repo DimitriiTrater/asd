@@ -26,8 +26,8 @@ template <class Cont> void radix_sort(Cont &cont) {
     for (int i = 1; i < 10; i++)
       count[i] += count[i - 1];
     for (int i = cont.size() - 1; i >= 0; i--) {
-      pos_res[count[(cont[i] / shift) % 10] - 1] = cont[i];
-      count[(cont[i] / shift) % 10]--;
+      pos_res[count[(static_cast<uint>(cont[i]) / shift) % 10] - 1] = cont[i];
+      count[(static_cast<uint>(cont[i]) / shift) % 10]--;
     }
 
     for (int i = 0; i < cont.size(); i++)
