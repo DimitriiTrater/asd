@@ -54,4 +54,8 @@ template <class Cont> void merge_sort(Cont &cont, int begin, int end) {
   merge(cont, begin, middle, end);
 }
 
+template <class Cont> void merge_sort_a(Cont &cont) {
+  merge_sort(cont, 0, cont.size() - 1);
+}
+
 void tenth_start();

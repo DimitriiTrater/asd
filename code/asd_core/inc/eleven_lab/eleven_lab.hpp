@@ -24,4 +24,6 @@ template <class T> void quick_sort(T &cont, int less, int greater) {
     quick_sort(cont, i, greater);
 }
 
-void eleven_start();
+template <class Cont> void quick_sort_a(Cont &cont) {
+  quick_sort(cont, 0, cont.size() - 1);
+}

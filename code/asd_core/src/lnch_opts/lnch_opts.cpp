@@ -40,6 +40,7 @@ void lnch_opts::build_hello() {
 }
 
 void lnch_opts::choice_lab(int inp) {
+  using namespace utils;
   switch (inp) {
   case 1:
     first_start();
@@ -51,28 +52,28 @@ void lnch_opts::choice_lab(int inp) {
     third_start();
     break;
   case 4:
-    fourth_start();
+    start_sort(comb_sort<std::vector<int>>);
     break;
   case 5:
-    fifth_start();
+    start_sort(insert_sort<std::vector<int>>);
     break;
   case 6:
-    sixth_start();
+    start_sort(selection_sort<std::vector<int>>);
     break;
   case 7:
-    seventh_start();
+    start_sort(shell_sort<std::vector<int>>);
     break;
   case 8:
-    eighth_start();
+    start_sort(radix_sort<std::vector<int>>);
     break;
   case 9:
-    nineth_start();
+    start_sort(heap_sort<std::vector<int>>);
     break;
   case 10:
-    tenth_start();
+    start_sort(merge_sort_a<std::vector<int>>);
     break;
   case 11:
-    eleven_start();
+    start_sort(quick_sort_a<std::vector<int>>);
     break;
   case 12:
     break;
