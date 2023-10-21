@@ -2,8 +2,6 @@
 #include <iostream>
 #include <optional>
 
-template <class T> using opt = std::optional<T>;
-
 int main() {
   using namespace std;
   using namespace lnch_opts;
