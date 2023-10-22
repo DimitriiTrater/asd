@@ -3,6 +3,7 @@
 #include "eleven_lab/eleven_lab.hpp"
 #include "fifth_lab/fifth_lab.hpp"
 #include "first_lab/first.hpp"
+#include "fourteen_lab/fourteen_lab.hpp"
 #include "fourth_lab/fourth_lab.hpp"
 #include "nineth_lab/nineth_lab.hpp"
 #include "second_lab/second.hpp"
@@ -82,6 +83,7 @@ void lnch_opts::choice_lab(int inp) {
   case 13:
     break;
   case 14:
+    start_ft();
     break;
   case 15:
     break;
