@@ -11,6 +11,7 @@
 #include "sixth_lab/sixth_lab.hpp"
 #include "tenth_lab/tenth_lab.hpp"
 #include "third_lab/third_lab.hpp"
+#include "thirteen_lab/thirteen_lab.hpp"
 #include "twelve_lab/twelve_lab.hpp"
 
 void lnch_opts::build_hello() {
@@ -32,8 +33,8 @@ void lnch_opts::build_hello() {
   cout << "10.\"Сортировка Слиянием\" " << endl;
   cout << "11.\"Сортировка Быстрая\" " << endl;
   cout << "12.\"Сортировка Внешняя многофазовая\" " << endl;
-  cout << "13.\"Задача о скобках\" " << endl;
-  cout << "14.\"Задача о скобках\" " << endl;
+  cout << "13.\"Хеш-таблица с наложением\" " << endl;
+  cout << "14.\"Хеш-таблица со списками\" " << endl;
   cout << "15.\"Задача о скобках\" " << endl;
   cout << "16.\"Задача о скобках\" " << endl;
   cout << "17.\"Задача о скобках\" " << endl;
@@ -81,6 +82,7 @@ void lnch_opts::choice_lab(int inp) {
     start_tw();
     break;
   case 13:
+    start_th();
     break;
   case 14:
     start_ft();

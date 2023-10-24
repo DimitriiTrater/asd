@@ -7,6 +7,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <string>
+#include <type_traits>
 #include <utility>
 
 template <class T> struct Hash {
@@ -31,13 +32,9 @@ template <class T> class HashTable {
 public:
   virtual void append(const T &t) = 0;
   virtual T &at(const T &t) = 0;
-
-protected:
 };
 
-template <class T> class HashTableList : public HashTable<T> {};
-
-template <class Q> class HashTableList<std::pair<std::string, Q>> {
+template <class T = std::string> struct HashTableString {
 public:
   static constexpr size_t min_hash_value =
       static_cast<size_t>('A') + static_cast<size_t>('0');
@@ -45,13 +42,20 @@ public:
       static_cast<size_t>("я"[0]) % Hash<std::string>::RU_COEF * 10 +
       static_cast<size_t>("я"[1]) % Hash<std::string>::RU_COEF * 10;
   static constexpr size_t hash_table_size = max_hash_value - min_hash_value;
+};
 
-  void append(const std::pair<std::string, Q> &t) {
+template <class T> class HashTableList : public HashTable<T> {};
+
+template <class Q>
+class HashTableList<std::pair<std::string, Q>>
+    : public HashTable<std::pair<std::string, Q>>, HashTableString<> {
+public:
+  void append(const std::pair<std::string, Q> &t) override {
     associative_array.at(Hash<std::string>{}(t.first) - min_hash_value)
         .push_back(t);
   }
 
-  std::pair<std::string, Q> &at(const std::string &key) {
+  std::pair<std::string, Q> &at(const std::string &key) override {
     std::list<std::pair<std::string, Q>> &line =
         associative_array[Hash<std::string>{}(key)-min_hash_value];
 
@@ -83,21 +87,16 @@ private:
       associative_array;
 };
 
-template <> class HashTableList<std::string> : public HashTable<std::string> {
+template <>
+class HashTableList<std::string> : public HashTable<std::string>,
+                                   HashTableString<> {
 public:
-  static constexpr size_t min_hash_value =
-      static_cast<size_t>('A') + static_cast<size_t>('0');
-  static constexpr size_t max_hash_value =
-      static_cast<size_t>("я"[0]) % Hash<std::string>::RU_COEF * 10 +
-      static_cast<size_t>("я"[1]) % Hash<std::string>::RU_COEF * 10;
-  static constexpr size_t hash_table_size = max_hash_value - min_hash_value;
-
-  void append(const std::string &t) {
+  void append(const std::string &t) override {
     auto n = Hash<std::string>{}(t);
     associative_array.at(Hash<std::string>{}(t)-min_hash_value).push_back(t);
   }
 
-  std::string &at(const std::string &t) {
+  std::string &at(const std::string &t) override {
     std::list<std::string> &line =
         associative_array[Hash<std::string>{}(t)-min_hash_value];
 
