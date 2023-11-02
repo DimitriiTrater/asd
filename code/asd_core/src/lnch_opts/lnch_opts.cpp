@@ -1,4 +1,5 @@
 #include "lnch_opts/lnch_opts.hpp"
+#include "eighteen_lab/eighteen_lab.hpp"
 #include "eighth_lab/eighth_lab.hpp"
 #include "eleven_lab/eleven_lab.hpp"
 #include "fifteen_lab/fifteen_lab.hpp"
@@ -102,6 +103,7 @@ void lnch_opts::choice_lab(int inp) {
     start_svt();
     break;
   case 18:
+    start_et();
     break;
   case 19:
     break;

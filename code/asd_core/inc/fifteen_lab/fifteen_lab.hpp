@@ -68,7 +68,18 @@ private:
   }
 
 public:
+  BinaryTree() = default;
   BinaryTree(const std::string &str);
+
+  template <class Cont>
+  [[__nodiscard__]] static BinaryTree<T> from_container(Cont cont) {
+    BinaryTree<T> res;
+    for (auto v : cont) {
+      res.add(v);
+    }
+    return res;
+  };
+
   void add(int data);
 
   [[__nodiscard__]] std::shared_ptr<Node> find(T data) {
