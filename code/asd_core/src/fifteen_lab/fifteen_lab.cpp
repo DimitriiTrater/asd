@@ -9,7 +9,4 @@ void start_fft() {
   BinaryTree<int>::rec_in_order(bt);
   std::cout << "\n концевой \n";
   BinaryTree<int>::rec_post_order(bt);
-  std::cout << "\n итер прямой \n";
-  BinaryTree<int>::iter_pre_order(bt);
-  std::cout << "\n";
 }
