@@ -36,8 +36,7 @@ public:
 
 template <class T = std::string> struct HashTableString {
 public:
-  static constexpr size_t min_hash_value =
-      static_cast<size_t>('A') + static_cast<size_t>('0');
+  static constexpr size_t min_hash_value = 10;
   static constexpr size_t max_hash_value =
       static_cast<size_t>("я"[0]) % Hash<std::string>::RU_COEF * 10 +
       static_cast<size_t>("я"[1]) % Hash<std::string>::RU_COEF * 10;
@@ -92,7 +91,6 @@ class HashTableList<std::string> : public HashTable<std::string>,
                                    HashTableString<> {
 public:
   void append(const std::string &t) override {
-    auto n = Hash<std::string>{}(t);
     associative_array.at(Hash<std::string>{}(t)-min_hash_value).push_back(t);
   }
 
