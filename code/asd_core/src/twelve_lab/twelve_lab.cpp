@@ -117,7 +117,7 @@ void create_initial_files(const std::string &input_file, int run_size,
 }
 
 void start_tw() {
-  constexpr int count_of_files{10};
+  constexpr int count_of_files{5};
   constexpr int elements_in_file{20};
 
   std::string input_file{"input.txt"};
