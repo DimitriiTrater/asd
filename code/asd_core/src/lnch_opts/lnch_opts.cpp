@@ -8,6 +8,7 @@
 #include "fourth_lab/fourth_lab.hpp"
 #include "nineth_lab/nineth_lab.hpp"
 #include "second_lab/second.hpp"
+#include "seventeen_lab/seventeen_lab.hpp"
 #include "seventh_lab/seventh_lab.hpp"
 #include "sixteen_lab/sixteen_lab.hpp"
 #include "sixth_lab/sixth_lab.hpp"
@@ -98,6 +99,7 @@ void lnch_opts::choice_lab(int inp) {
     start_sxt();
     break;
   case 17:
+    start_svt();
     break;
   case 18:
     break;
