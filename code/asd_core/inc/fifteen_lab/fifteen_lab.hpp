@@ -40,19 +40,23 @@ template <class T> bool BinaryTree<T>::check_balance(const std::string &str) {
   for (const char &ch : str) {
     switch (ch) {
     case '(':
-      stack.push(ch);
-    case ')': {
-      if (stack.top() != '(') {
+      stack.push(')');
+      break;
+    case ')':
+      if (stack.top() != ch || stack.empty()) {
         std::cerr << "Bad creations\n";
         return false;
       }
-    }
+      stack.pop();
+      break;
     default:
       continue;
-      // 8 (3 (1, 6 (4, 7)), 10 (,14(13,)))
     }
   }
-  std::cout << "Good creations\n";
+  if (not stack.empty()) {
+    std::cerr << "Bad creations\n";
+    return false;
+  }
   return true;
 }
 
@@ -64,27 +68,28 @@ template <class T> bool BinaryTree<T>::is_operator(char ch) {
 }
 
 template <class T> BinaryTree<T>::BinaryTree(const std::string &str) {
-  check_balance(str);
-  std::string s = str;
-  std::string temp_s{};
+  if (check_balance(str)) {
+    std::string s = str;
+    std::string temp_s{};
 
-  while (not s.empty()) {
+    while (not s.empty()) {
 
-    if (is_operator(s.at(0))) {
+      if (is_operator(s.at(0))) {
+        s.erase(0, 1);
+        continue;
+      }
+
+      while (not is_operator(s.at(0))) {
+        temp_s += s.at(0);
+        s.erase(0, 1);
+      }
+
+      if (not temp_s.empty()) {
+        add(std::stoi(temp_s));
+        temp_s = "";
+      }
       s.erase(0, 1);
-      continue;
     }
-
-    while (not is_operator(s.at(0))) {
-      temp_s += s.at(0);
-      s.erase(0, 1);
-    }
-
-    if (not temp_s.empty()) {
-      add(std::stoi(temp_s));
-      temp_s = "";
-    }
-    s.erase(0, 1);
   }
 }
 

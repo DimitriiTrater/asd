@@ -9,6 +9,7 @@
 #include "nineth_lab/nineth_lab.hpp"
 #include "second_lab/second.hpp"
 #include "seventh_lab/seventh_lab.hpp"
+#include "sixteen_lab/sixteen_lab.hpp"
 #include "sixth_lab/sixth_lab.hpp"
 #include "tenth_lab/tenth_lab.hpp"
 #include "third_lab/third_lab.hpp"
@@ -94,8 +95,13 @@ void lnch_opts::choice_lab(int inp) {
     start_fft();
     break;
   case 16:
+    start_sxt();
     break;
   case 17:
+    break;
+  case 18:
+    break;
+  case 19:
     break;
   default:
     std::cerr << "Плохой ввод" << std::endl;
