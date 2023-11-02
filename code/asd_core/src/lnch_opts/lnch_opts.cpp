@@ -1,6 +1,7 @@
 #include "lnch_opts/lnch_opts.hpp"
 #include "eighth_lab/eighth_lab.hpp"
 #include "eleven_lab/eleven_lab.hpp"
+#include "fifteen_lab/fifteen_lab.hpp"
 #include "fifth_lab/fifth_lab.hpp"
 #include "first_lab/first.hpp"
 #include "fourteen_lab/fourteen_lab.hpp"
@@ -35,9 +36,11 @@ void lnch_opts::build_hello() {
   cout << "12.\"Сортировка Внешняя многофазовая\" " << endl;
   cout << "13.\"Хеш-таблица с наложением\" " << endl;
   cout << "14.\"Хеш-таблица со списками\" " << endl;
-  cout << "15.\"Задача о скобках\" " << endl;
-  cout << "16.\"Задача о скобках\" " << endl;
-  cout << "17.\"Задача о скобках\" " << endl;
+  cout << "15.\"БДП: Рекурсивные обходы\" " << endl;
+  cout << "16.\"БДП: Не рекурсивный прямой обход\" " << endl;
+  cout << "17.\"БДП: операции(поиск, добавление, удаление)\" " << endl;
+  cout << "18.\"Сортировка БДП\" " << endl;
+  cout << "19.\"Геометрия на плоскости\" " << endl;
   cout << "Если хотите выйти, то введите -1" << endl;
   cout << "#####################################" << endl;
 }
@@ -88,6 +91,7 @@ void lnch_opts::choice_lab(int inp) {
     start_ft();
     break;
   case 15:
+    start_fft();
     break;
   case 16:
     break;
