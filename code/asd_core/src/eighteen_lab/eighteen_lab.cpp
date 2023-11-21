@@ -4,13 +4,13 @@
 #include <vector>
 
 void start_et() {
-  std::vector<int> cont{};
-  std::cout << "Ввод не инта прервет ввод\n";
-  std::cout << "Введите массив:\n";
-  int t{};
-  while (std::cin >> t) {
-    cont.emplace_back(t);
-  }
+  std::vector<int> cont{-8, 0, 1, 12, 5, 7, 25, 38};
+  // std::cout << "Ввод не инта прервет ввод\n";
+  // std::cout << "Введите массив:\n";
+  // int t{};
+  // while (std::cin >> t) {
+  //   cont.emplace_back(t);
+  // }
   for (const auto &el : cont) {
     std::cout << el << " ";
   }

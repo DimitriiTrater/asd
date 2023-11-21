@@ -7,6 +7,7 @@
 #include "first_lab/first.hpp"
 #include "fourteen_lab/fourteen_lab.hpp"
 #include "fourth_lab/fourth_lab.hpp"
+#include "nineteen_lab/nineteen_lab.hpp"
 #include "nineth_lab/nineth_lab.hpp"
 #include "second_lab/second.hpp"
 #include "seventeen_lab/seventeen_lab.hpp"
@@ -106,6 +107,7 @@ void lnch_opts::choice_lab(int inp) {
     start_et();
     break;
   case 19:
+    start_nnt();
     break;
   default:
     std::cerr << "Плохой ввод" << std::endl;
