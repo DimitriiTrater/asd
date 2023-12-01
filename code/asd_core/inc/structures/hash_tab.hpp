@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fourteen_lab/fourteen_lab.hpp"
+#include "hash_table.hpp"
 #include <array>
 #include <string>
 #include <utility>

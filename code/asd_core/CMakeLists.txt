@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(asd_core)
+project(asd_core CXX)
 
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/inc)
 

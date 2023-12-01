@@ -1,3 +1,5 @@
+#pragma once
+
 template <class T> void quick_sort(T &cont, int less, int greater) {
   int i = less;
   int j = greater;
