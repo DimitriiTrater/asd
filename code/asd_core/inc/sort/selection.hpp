@@ -1,16 +1,26 @@
 #pragma once
 
+#include "concepts/concepts.hpp"
 #include <algorithm>
-template <class Cont> void selection_sort(Cont &cont) {
-  for (auto fit = cont.begin(); fit != (cont.end() - 1); ++fit) {
-    auto min_it = fit;
-    for (auto sit = (fit + 1); sit != cont.end(); ++sit) {
-      if (*sit < *min_it)
-        min_it = sit;
-    }
-    if (min_it != fit)
-      std::swap(*fit, *min_it);
-  }
-}
 
-void sixth_start();
+class selection {
+  selection() = delete;
+  selection(selection &&) = delete;
+  selection(const selection &) = delete;
+  selection &operator=(selection &&) = delete;
+  selection &operator=(const selection &) = delete;
+  ~selection() = delete;
+
+public:
+  inline constexpr static void sort(con::container auto &cont) {
+    for (auto fit = cont.begin(); fit != (cont.end() - 1); ++fit) {
+      auto min_it = fit;
+      for (auto sit = (fit + 1); sit != cont.end(); ++sit) {
+        if (*sit < *min_it)
+          min_it = sit;
+      }
+      if (min_it != fit)
+        std::swap(*fit, *min_it);
+    }
+  }
+};

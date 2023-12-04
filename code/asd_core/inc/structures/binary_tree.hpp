@@ -242,5 +242,3 @@ template <class T> void BinaryTree<T>::iter_pre_order(BinaryTree<T> bt) {
     }
   }
 }
-
-void start_fft();

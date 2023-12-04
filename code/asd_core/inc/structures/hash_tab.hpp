@@ -52,5 +52,3 @@ public:
 private:
   std::array<std::string, hash_table_size> associative_array{};
 };
-
-void start_th();

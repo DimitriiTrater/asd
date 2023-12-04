@@ -122,5 +122,3 @@ public:
 private:
   std::array<std::list<std::string>, hash_table_size> associative_array{};
 };
-
-void start_ft();
