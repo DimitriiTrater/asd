@@ -14,7 +14,7 @@ class comb {
   comb &operator=(const comb &) = delete;
 
 public:
-  static void sort(con::container auto &container) {
+  inline static constexpr void sort(con::container auto &container) {
     const double FACTOR =
         1 / (1 - std::pow(std::numbers::e, -std::numbers::phi));
     uint step = container.size() - 1;

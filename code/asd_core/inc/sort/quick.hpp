@@ -11,7 +11,7 @@ class quick {
   quick &operator=(const quick &) = delete;
   ~quick() = delete;
 
-  inline constexpr static void sort(con::container auto &cont, int less,
+  inline static constexpr void sort(con::container auto &cont, int less,
                                     int greater) {
     int i = less;
     int j = greater;
@@ -39,7 +39,7 @@ class quick {
   }
 
 public:
-  inline constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     sort(cont, 0, cont.size() - 1);
   }
 };

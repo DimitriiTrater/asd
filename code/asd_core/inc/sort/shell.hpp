@@ -12,7 +12,7 @@ private:
   ~shell() = delete;
 
 public:
-  inline constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     for (auto step = cont.size() / 2; step != 0; step /= 2)
       for (auto fit = cont.begin() + step; fit != cont.end(); ++fit)
         for (auto sit = fit;

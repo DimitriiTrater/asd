@@ -12,7 +12,7 @@ class merge {
   merge &operator=(const merge &) = delete;
 
   template <con::container T>
-  inline constexpr static void merging(T &cont, int left, int middle,
+  inline static constexpr void merging(T &cont, int left, int middle,
                                        int right) {
     int first_size = middle - left + 1;
     int second_size = right - middle;

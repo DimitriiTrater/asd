@@ -32,7 +32,7 @@ class heap {
   heap &operator=(const heap &) = delete;
 
 public:
-  constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     int heap_size = cont.size();
     for (int node = heap_size / 2 - 1; node >= 0; node--)
       heapify(cont, heap_size, node);

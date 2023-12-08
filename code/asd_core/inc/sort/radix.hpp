@@ -14,7 +14,7 @@ class radix {
   ~radix() = delete;
 
 public:
-  inline constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     auto max = *std::max_element(cont.begin(), cont.end());
     std::vector<int> neg_res{};
 

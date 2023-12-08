@@ -12,7 +12,7 @@ class insertion {
   insertion &operator=(const insertion &) = delete;
 
 public:
-  constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     auto sit{0};
     for (auto fit = 1; fit < cont.size(); fit++) {
       auto num = cont[fit];

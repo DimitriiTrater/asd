@@ -12,7 +12,7 @@ class selection {
   ~selection() = delete;
 
 public:
-  inline constexpr static void sort(con::container auto &cont) {
+  inline static constexpr void sort(con::container auto &cont) {
     for (auto fit = cont.begin(); fit != (cont.end() - 1); ++fit) {
       auto min_it = fit;
       for (auto sit = (fit + 1); sit != cont.end(); ++sit) {
